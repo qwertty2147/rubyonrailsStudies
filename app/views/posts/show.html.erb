@@ -1,15 +1,36 @@
+ <header class="masthead header2" >
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1><%= @post.title%></h1>
+            
+            <span class="meta">
+            	<%= link_to "edit" ,edit_post_path %>|
+				<%= link_to "delete" ,post_path,method: :delete ,data: {confirm: "y/n?"}%>	
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+	<article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <p>
+          	<%= @post.body%>
+          </p>
+     	</div>
+ 	 </div>
+	</div>
+	</article>
+
 <h1>show </h1>
 <p><%= params[:id]%></p>
 
-<p>
-	<%= @post.title%>
-</p>
-
-<p>
-	<%= @post.body%>
-</p> 
-<%= link_to "edit" ,edit_post_path %>|
-<%= link_to "delete" ,post_path,method: :delete ,data: {confirm: "y/n?"}%>	
 
 
 <h2 >show comment </h2>

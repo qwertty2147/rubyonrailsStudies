@@ -1,14 +1,50 @@
+<header class="masthead header1" >
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Clean Blog</h1>
+            <span class="subheading">A Blog Theme by Start Bootstrap</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8">
+			<% @posts.each do |post| %>
+			
+				<div class="post-preview">
+					<a href="post.html">
+						<h2 class="post-title">
+							<%= link_to post.title, post_path(post) %>
+						</h2>
+					</a>
+
+					<p class="post-meta">
+						<%= link_to "edit" ,edit_post_path(post) %> |	
+						<%= link_to "delete" , post_path(post) , method: :delete , data: {confirm: "A u s delete "}%>
+	
+					</p>
+
+			<hr>
+			<% end %>
+				</div>
+	
+	
+	
+			
+		</div>
+	</div>
+</div>
 <h1>POSTS <%= link_to "add" ,new_post_path %>	</h1>
 <%= link_to "about" ,about_path %>
 <%= link_to "contact" ,contact_path %>	
 
-<% @posts.each do |post| %>
-<div class="panel">
-	<p><%= link_to post.title, post_path(post) %></p>
-	<p><%= link_to "edit" ,edit_post_path(post) %> 
-	</p>
-	
-</div>
-<% end %>
+
+
 
 
