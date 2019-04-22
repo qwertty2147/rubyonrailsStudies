@@ -1,0 +1,14 @@
+<h1>POSTS <%= link_to "add" ,new_post_path %>	</h1>
+<%= link_to "about" ,about_path %>
+<%= link_to "contact" ,contact_path %>	
+
+<% @posts.each do |post| %>
+<div class="panel">
+	<p><%= link_to post.title, post_path(post) %></p>
+	<p><%= link_to "edit" ,edit_post_path(post) %> 
+	</p>
+	
+</div>
+<% end %>
+
+

@@ -1,0 +1,22 @@
+	<h1>show <%= link_to "home" ,posts_path %></h1>
+<p><%= params[:id]%></p>
+
+<p>
+	<%= @post.title%>
+</p>
+
+<p>
+	<%= @post.body%>
+</p> 
+<%= link_to "edit" ,edit_post_path %>|
+<%= link_to "delete" ,post_path,method: :delete ,data: {confirm: "y/n?"}%>	
+
+
+<h2 >show comment </h2>
+
+<%= render @post.comments%>
+
+<h2 >comment </h2>
+
+
+<%= form_for [@post.comments.build] do %>
