@@ -3,9 +3,9 @@
 one:
   name: MyString
   body: MyText
-  post: 
+  post: one
 
 two:
   name: MyString
   body: MyText
-  post: 
+  post: two

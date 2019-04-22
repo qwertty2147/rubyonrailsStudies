@@ -1,4 +1,4 @@
-	<h1>show <%= link_to "home" ,posts_path %></h1>
+<h1>show </h1>
 <p><%= params[:id]%></p>
 
 <p>
@@ -13,10 +13,19 @@
 
 
 <h2 >show comment </h2>
-
-<%= render @post.comments%>
+<%= render @post.comment.order("created_at DESC") %>
 
 <h2 >comment </h2>
 
 
-<%= form_for [@post.comments.build] do %>
+<%= form_for [@post,@post.comment.build] do |f| %>
+
+	<%= f.label :name %>
+ 	 <%= f.text_field :name %>
+ 	 <%= f.label :body %>
+ 	 <%= f.text_field :body %>
+ 	 <%= f.submit %>
+<% end %>
+
+
+ 	

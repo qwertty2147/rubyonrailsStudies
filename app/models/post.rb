@@ -4,7 +4,7 @@ class Post < ApplicationRecord
 	validates :title,length: {minimum: 1}
 	validates :body,length: {minimum: 1	}
 
-	has_many :comments
+	has_many :comment
 	
 
 end
