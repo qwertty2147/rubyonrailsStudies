@@ -1,24 +1,39 @@
-<div class="form">
-
-<% if @post.errors.any? %>
-	<ul>
-	<% @post.errors.full_messages.each do |message| %>
-		<li><%= message %></li>
-	
-
-	<% end %>
-	</ul>
-<% end %>
 
 	<%= form_for @post do |f| %>
-	<%= f.label :title %><br>
-	<%= f.text_field :title %><br>
+		<% if @post.errors.any? %>
+		<ul>
+			<% @post.errors.full_messages.each do |message| %>
+			<li><%= message %></li>
+	
 
-	<%= f.label :body %><br>
-	<%= f.text_area :body %><br>
+			<% end %>
+		</ul>
+		<% end %>
 
-	<%= f.submit %><br>
+			<div class="row control-group">
+            <div class="form-group floating-label-form-group controls">
 
-	<%end%>
+              	<%= f.label :title %>
+              
+              <%= f.text_field :title , class: "form-control", placeholder: "input title" %>
+                <p class="help-block text-danger">
+              </p>
+            </div>
+          </div>
+          <div class="row control-group">
+            <div class="form-group floating-label-form-group controls">
+            	<%= f.label :body %>
+               <%= f.text_area :body ,class: "form-control", placeholder: "input body"%>
+              <p class="help-block text-danger">
+                
+              </p>
+            </div>
+          </div>
+          <br>
 
-</div>
+          <div id="success"></div>
+          <div class="form-group">
+            
+            <%= f.submit class:"btn btn-default" %>
+          </div>
+        <% end%>

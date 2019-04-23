@@ -7,4 +7,7 @@ class PagesController < ApplicationController
 		
 		
 	end
+	def web
+		
+	end
 end
