@@ -1,3 +1,32 @@
-<h1>edit <%= params[:id]%>  <%= link_to "home" ,posts_path %></h1>
 
-<%= render "form" %>
+ <header class="masthead header2" >
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1><%= @post.title%></h1>
+            
+            <span class="meta">
+            	<%= link_to "back" ,post_path %>|
+				      <%= link_to "delete" ,post_path,method: :delete ,data: {confirm: "y/n?"}%>	
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+	<article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <p>
+        <%= render "form" %>
+            
+          </p>
+     	</div>
+ 	 </div>
+	</div>
+	</article>
+

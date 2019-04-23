@@ -1,22 +1,83 @@
-	<h1>show <%= link_to "home" ,posts_path %></h1>
-<p><%= params[:id]%></p>
+ <header class="masthead header2" >
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1><%= @post.title%></h1>
+            
+            <span class="meta">
+            	<%= link_to "edit" ,edit_post_path %>|
+				      <%= link_to "delete" ,post_path,method: :delete ,data: {confirm: "y/n?"}%>	
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
-<p>
-	<%= @post.title%>
-</p>
+	<article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <p>
+          	<%= @post.body%>
+          </p>
+            <% if @post.comment.count>0%>
+            <hr>
+            <h2 >show comment </h2>
+            <hr>
 
-<p>
-	<%= @post.body%>
-</p> 
-<%= link_to "edit" ,edit_post_path %>|
-<%= link_to "delete" ,post_path,method: :delete ,data: {confirm: "y/n?"}%>	
+            <%= render @post.comment.order("created_at DESC") %>
+            <%end%>
+          
+     	</div>
+ 	 </div>
+	</div>
+	</article>
+<div class="lightbg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <h1>show </h1>
+        <%= form_for [@post, @post.comment.build] do |f| %>
+        <p><%= params[:id]%></p>
+        
+          <div class="row control-group">
+            <div class="form-group floating-label-form-group controls">
+              <%= f.label :name %>
+              <%= f.text_field :name, class: "form-control", placeholder: "Name" %>
+              
+              <p class="help-block text-danger">
+                
+              </p>
+            </div>
+          </div>
+          <div class="row control-group">
+            <div class="form-group floating-label-form-group controls">
+              <%= f.label :body %>
+               <%= f.text_field :body ,class: "form-control", placeholder: "Comment"%>
+              <p class="help-block text-danger">
+                
+              </p>
+            </div>
+          </div>
+          <br>
+
+          <div id="success"></div>
+          <div class="form-group">
+            
+            <%= f.submit class:"btn btn-default" %>
+          </div>
+        <% end%>
+      </div>
+    </div>
+  </div>
+</div>
+  <hr>
 
 
-<h2 >show comment </h2>
-
-<%= render @post.comments%>
-
-<h2 >comment </h2>
 
 
-<%= form_for [@post.comments.build] do %>
+
+ 	
