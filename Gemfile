@@ -11,7 +11,7 @@ gem 'rails', '~> 5.1.6', '>= 5.1.6.2'
 # Use sqlite3 as the database for Active Record
 
 group :production do
-  gem 'pg','~> 0.18.3'
+  gem 'pg'
   gem 'rails_12factor', group: :production
 end
 group :development do
