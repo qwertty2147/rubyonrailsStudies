@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 	get "/pages/about" => "pages#about" ,as: :about
 	get "/pages/contact" => "pages#contact",as: :contact
-	# get "/pages/web" => "pages#web", as: :web
+	get "/pages/web" => "pages#web", as: :web
 # get "/posts" => "posts#index" ,as: :index_post
 # get "/posts/new" => "posts#new" ,as: :add
 # get "/post/:id" => "posts#show" ,as: :post
