@@ -1,0 +1,30 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>login</title>
+</head>
+
+<body>
+	<header class="masthead header1" >
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Clean Blog</h1>
+            <span class="subheading">A Blog Theme by Start Bootstrap</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+	<h1>LOGIN</h1>
+	<form action="/logins" method="get">
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		User : <input type="text" name="user_id">
+		Password : <input type="password" name="password">
+		<input type="submit" value="login">
+		<a href="/logins/new">Register</a>
+	</form>
+</body>
+</html>

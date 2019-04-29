@@ -9,8 +9,8 @@ Rails.application.routes.draw do
 # delete "post/:id" => "posts#destroy",as: :delete_post
 # post"/posts" => "posts#create"
 # get "/post/:id/edit" =>"posts#edit", as: :edit_post
- 
- 	root"posts#index"
+ 	resources :logins
+ 	root"logins#index"
  	resources :posts do
  		 resources :comments
 
